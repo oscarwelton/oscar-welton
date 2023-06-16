@@ -1,0 +1,11 @@
+.navbar {
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+
+  li {
+    font-size: 3.5rem;
+  }
+}

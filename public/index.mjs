@@ -74,3 +74,12 @@ contact.addEventListener("click", () => {
     box.classList.remove("rotate-left", "rotate-front", "rotate-right");
   });
 });
+
+
+const url = "data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='9.15' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E";
+
+const circle = document.getElementById("circle");
+
+circle.style.background = `radial-gradient(circle at 50% 50%, rgba(0,0,0,0.55), rgba(0,0,0,0.2)),
+radial-gradient(circle at 50% 50%, rgba(16,13,13,0.06), rgba(9,10,9,0.19)),
+url(${url})`;
