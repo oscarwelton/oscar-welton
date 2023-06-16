@@ -1,0 +1,20 @@
+{
+  "name": "oscar-welton-com",
+  "version": "1.0.0",
+  "description": "Oscar Welton's Personal Portfolio Website",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --no-source-map --watch ./sass/index.scss public/stylesheets/styles.css",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "path": "^0.12.7",
+    "sass": "^1.63.4"
+  }
+}
