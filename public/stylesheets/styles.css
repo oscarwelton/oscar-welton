@@ -120,9 +120,9 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 800px;
   height: 100%;
   width: 100%;
-  max-width: 800px;
   border-radius: 50%;
   position: fixed;
   right: 0;
@@ -132,8 +132,20 @@ table {
 }
 
 .w {
-  height: 700px;
-  width: 700px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: -50%;
+  background-color: black;
+  clip-path: polygon(0% 0%, 10% 100%, 25% 100%, 50% 75%, 75% 100%, 90% 100%, 100% 0%, 80% 5%, 70% 60%, 50% 40%, 30% 60%, 20% 5%);
+  --webkit-clip-path: polygon(0% 0%, 10% 100%, 25% 100%, 50% 75%, 75% 100%, 90% 100%, 100% 0%, 80% 5%, 70% 60%, 50% 40%, 30% 60%, 20% 5%);
+}
+
+.w-2 {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  right: -50%;
   background-color: black;
   clip-path: polygon(0% 0%, 10% 100%, 25% 100%, 50% 75%, 75% 100%, 90% 100%, 100% 0%, 80% 5%, 70% 60%, 50% 40%, 30% 60%, 20% 5%);
   --webkit-clip-path: polygon(0% 0%, 10% 100%, 25% 100%, 50% 75%, 75% 100%, 90% 100%, 100% 0%, 80% 5%, 70% 60%, 50% 40%, 30% 60%, 20% 5%);
@@ -191,7 +203,7 @@ table {
 }
 
 .rotate-back {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 .rotate-left {
