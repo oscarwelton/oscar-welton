@@ -1,8 +1,9 @@
 @import 'reset';
 @import 'box';
 @import 'navbar';
-@import 'home';
+@import 'name';
 @import 'contact';
+@import 'projects';
 
 :root {
   --serif: 'Lora', serif;
@@ -19,6 +20,10 @@ body {
   font-family: var(--sans);
   position: fixed;
   z-index: -5;
+}
+
+.d-none {
+  display: none;
 }
 
 .bg-shadow {

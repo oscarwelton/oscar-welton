@@ -23,7 +23,6 @@
     </nav>
 
     <div class="bg-shadow">
-      <h1>hello world</h1>
     </div>
 
     <div class="bg">
@@ -43,6 +42,57 @@
         <span class="n">N</span>
       </div>
     </div>
+    <div class="contact-container d-none">
+    <div class="contact-form">
+      <form action="/submit" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <br>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <br>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <br>
+        <textarea name="message" placeholder="Your Message" rows="4" cols="10" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+  </div>
+
+    <div class="projects">
+      <ul class="project d-none">
+        <li class="title">Scramble <span class="date">June 2023</span></li>
+        <li class="technologies">Node | Express | Sass | Heroku</li>
+        <li class="description"><p>A single-page application inspired by Wordle. All users are given a daily set of anagrams to solve.
+          Using localStorage, API calls, and a custom-built algorithm, the app tracks and displays the user's progress.</p>
+          <p>This project was a step into the world of Vanilla JS, Node and Express.</p>
+        </li>
+        </li>
+        <li class="project-link"><a href="https://github.com/oscposc/scramble">View on GitHub</a></li>
+        <li class="project-link"><a href="https://www.play-scramble.com/">View Site</a></li>
+      </ul>
+      <ul class="project d-none">
+        <li class="title">Tweeter <span class="date">May 2023</span></li>
+        <li class="technologies">Ruby on Rails | Sass | TurboRails | Stimulus</li>
+        <li class="description"><p>Tweeter is a web app designed for mobile.
+          The app uses the OpenAI API to generate tweets based on a users input.
+          Users can then tweet directly to their account.</p>
+        <p>Tweeter was a fun project with the intention to consolidate learning</p></li>
+        </li>
+        <li class="project-link"><a href="https://github.com/oscposc/tweeter">View on GitHub</a></li>
+        <li class="project-link"><a href="http://tweetergen.live/">View Site</a></li>
+      </ul>
+      <ul class="project d-none">
+        <li class="title">Journo <span class="date">March 2023</span></li>
+        <li class="technologies">Ruby on Rails | Sass | Stimulus.js | OpenAI | TurboRails | SideKiq</li>
+        <li class="description"><p>My final project for Le Wagon, Cape Town. Journo was designed to be an AI assisted
+          travel planner. Giving users real-time, personalised information on their destination, including restaurants,
+          activities, Visa requirements and more.</p>
+        <p>Users can create, update and managed itineraries and journal they travel experiences.</p>
+      </li>
+        <li class="project-link"><a href="https://github.com/SarahKatherineFrancis/journo">View on GitHub</a></li>
+      </ul>
+  </div>
+
 
     <div class="links-div">
       <ul>

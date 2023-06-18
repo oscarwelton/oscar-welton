@@ -1,51 +1,50 @@
+const bg = document.querySelector(".bg");
+const url = "./resources/grainy.svg";
+
+
+
+
+
+
+
 const surname = document.querySelector(".surname");
 const firstName = document.querySelector(".first-name");
 const about = document.getElementById("about");
+const projects = document.getElementById("projects");
+
+const projectsContent = Array.from(
+  document.querySelector(".projects").children
+);
+
 about.addEventListener("click", () => {
   surname.classList.remove("intro-animation");
   firstName.classList.remove("intro-animation");
-  firstName.classList.add("up-animation");
-  surname.classList.add("down-animation");
+
+  setTimeout(() => {
+    surname.style.transition = "";
+    firstName.style.transition = "";
+
+    firstName.classList.add("up-animation");
+    surname.classList.add("down-animation");
+  }, 10);
 });
 
-let y = 0;
+projects.addEventListener("click", () => {
+  firstName.classList.remove("intro-animation");
+  surname.classList.remove("intro-animation");
+  firstName.classList.add("round-animation");
+  surname.classList.add("round-animation");
+  projectsContent.forEach((project, index) => {
 
-function updateCirclePosition(y) {
-  const bg = document.querySelector(".bg");
-  const url = "./resources/grainy.svg";
-
-  const bgString = `radial-gradient(circle at 100% ${y}%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
-  url('${url}')`;
-  bg.style.background = bgString;
-  // console.log(bgString);
-}
+    setTimeout(() => {
+      project.classList.remove("d-none");
+      project.classList.add("fade");
+    }, 400 * index);
+  });
+});
 
 
-// setInterval(() => {
-//   updateCirclePosition();
-// }, 1000);
-
-// setInterval(updateCirclePosition, 30000);
-// while (true) {
-//   // Your code logic goes here
-
-//   // Check if x reaches 150 or -50 to change direction
-//   if (x === 150 || x === -50) {
-//     direction *= -1; // Change direction
-//   }
-
-//   // Check if y reaches 150 or -50 to change direction
-//   if (y === 150 || y === -50) {
-//     direction *= -1; // Change direction
-//   }
-
-//   // Increment x or y based on the current direction
-//   if (x < 150 && x >= -50) {
-//     x += direction;
-//   } else if (y < 150 && y >= -50) {
-//     y += direction;
-//   }
-
-//   // Print the current values of x and y (you can replace this with your desired logic)
-//   console.log(`x: ${x}, y: ${y}`);
-// }
+const contactForm = document.querySelector(".contact-container");
+contact.addEventListener("click", () => {
+  contactForm.classList.remove("d-none");
+});

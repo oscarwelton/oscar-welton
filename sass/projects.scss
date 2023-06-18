@@ -1,0 +1,71 @@
+.projects {
+  width: 35%;
+  height: fit-content;
+  box-sizing: border-box;
+  position: relative;
+  top: 5%;
+  left: 5%;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project {
+    margin: 1rem 0
+  }
+
+  .title {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-family: var(--sans-serif);
+    margin-bottom: 0.5rem;
+  }
+
+  .date {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--serif);
+  }
+
+  .technologies {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: var(--sans-serif);
+  }
+
+  p {
+    margin: 0.5rem 0;
+    text-align: justify;
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-right: 3rem;
+  }
+
+  a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+}
+
+.fade {
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
