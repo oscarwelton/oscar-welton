@@ -2,12 +2,11 @@
 @import 'box';
 @import 'navbar';
 @import 'home';
+@import 'contact';
 
 :root {
   --serif: 'Lora', serif;
   --sans: 'Noto Sans', sans-serif;
-
-
   font-family: 'Lora', serif;
   font-family: 'Noto Sans', sans-serif;
 }
@@ -32,6 +31,7 @@ body {
   width: 100%;
   box-shadow: inset -30px 50px 25px 20px rgba(0, 0, 0, 0.5);
   background-color: transparent;
+
 }
 
 .bg {

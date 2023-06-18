@@ -20,18 +20,6 @@ function updateCirclePosition(y) {
   // console.log(bgString);
 }
 
-setInterval(() => {
-  if (y < 150) {
-    y++;
-    y++
-  } else if (y === 150) {
-    y = -150;
-    y++;
-    y++;
-  }
-
-  updateCirclePosition(y);
-}, 100);
 
 // setInterval(() => {
 //   updateCirclePosition();
