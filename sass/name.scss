@@ -1,22 +1,22 @@
 .first-name {
   position: absolute;
   height: 100%;
-  width: 110%;
-  top: 40%;
-  left: 48%;
+  width: 95rem;
+  top: -5%;
+  left: 45%;
   border-radius: 50%;
   transform-style: preserve-3d;
   transition: all 0.3s ease;
 
   span {
-    color: white;
     font-size: 15rem;
     backface-visibility: hidden;
-    text-shadow: inset 0 0 10px 3px rgba(0, 0, 0, 0.6);
     font-family: var(--serif);
     font-weight: 100;
     transition: all 0.3s ease;
+    color: white;
   }
+
 
   .o {
     position: absolute;
@@ -27,21 +27,21 @@
 
   .s {
     position: absolute;
-    transform: translate(-50%, -50%) rotate(10deg) rotateX(90deg);
+    transform: translate(-50%, -50%) rotate(10deg) rotateX(91deg);
     left: 61%;
     top: 2%;
   }
 
   .c {
     position: absolute;
-    transform: translate(-50%, -50%) rotate(20deg) rotateX(90deg);
+    transform: translate(-50%, -50%) rotate(20deg) rotateX(93deg);
     left: 71%;
     top: 5%;
   }
 
   .a {
     position: absolute;
-    transform: translate(-50%, -50%) rotate(25deg) rotateX(90deg);
+    transform: translate(-50%, -50%) rotate(25deg) rotateX(94deg);
     left: 81%;
     top: 9%;
   }
@@ -49,8 +49,8 @@
   .r {
     position: absolute;
     left: 90%;
-    top: 15%;
-    transform: translate(-50%, -50%) rotate(30deg) rotateX(90deg);
+    top: 12%;
+    transform: translate(-50%, -50%) rotate(30deg) rotateX(95deg);
 
   }
 }
@@ -58,11 +58,11 @@
 .surname {
   position: absolute;
   height: 100%;
-  width: 110%;
-  top: 60%;
+  width: 95rem;
+  top: 5%;
   left: 50%;
   border-radius: 50%;
-  animation: intro 3s linear forwards;
+  animation: ln-animation 3s linear forwards;
   animation-delay: 5s;
   transform-style: preserve-3d;
   transition: all 0.3s ease;
@@ -78,92 +78,108 @@
 
   .w {
     position: absolute;
-    transform: translate(-50%, -50%) rotateX(95deg);
+    transform: translate(-50%, -50%) rotateX(90deg);
     left: 47%;
     top: 0%;
   }
 
   .e {
     position: absolute;
-    transform: translate(-50%, -50%) rotate(10deg) rotateX(95deg);
+    transform: translate(-50%, -50%) rotate(10deg) rotateX(89deg);
     left: 59%;
     top: 1%;
   }
 
   .l {
     position: absolute;
-    transform: translate(-50%, -50%) rotate(15deg) rotateX(95deg);
+    transform: translate(-50%, -50%) rotate(15deg) rotateX(88deg);
     left: 67%;
     top: 2%;
   }
 
   .t {
     position: absolute;
-    transform: translate(-50%, -50%) rotate(20deg) rotateX(95deg);
+    transform: translate(-50%, -50%) rotate(20deg) rotateX(87deg);
     left: 75%;
-    top: 3.5%;
+    top: 4%;
   }
 
   .o {
     position: absolute;
-    transform: translate(-50%, -50%) rotate(25deg) rotateX(95deg);
+    transform: translate(-50%, -50%) rotate(25deg) rotateX(86deg);
     left: 85%;
-    top: 6%;
+    top: 8%;
   }
 
   .n {
     position: absolute;
-    transform: translate(-50%, -50%) rotate(30deg) rotateX(95deg);
+    transform: translate(-50%, -50%) rotate(30deg) rotateX(85deg);
     left: 95%;
-    top: 10%;
+    top: 13%;
   }
 }
 
-.intro-animation {
-  animation: 2s intro forwards;
+.fn-animation {
+  animation: 2s fn-intro forwards;
   transition: all 0.3s ease;
 }
 
-@keyframes intro {
+.ln-animation {
+  animation: 2s ln-intro forwards;
+  transition: all 0.3s ease;
+}
+
+
+@keyframes fn-intro {
   0% {
-    transform: translate(-35%, -50%) rotateX(-80deg) rotateY(30deg) rotateZ(90deg);
+    transform: translate(-35%, 0%) rotateX(-100deg) rotateY(20deg) rotateZ(90deg);
   }
 
   100% {
-    transform: translate(-52%, -50%) rotateX(-110deg) rotateY(30deg) rotateZ(5deg);
+    transform: translate(-50%, 0%) rotateX(-100deg) rotateY(20deg) rotateZ(2deg);
+  }
+}
+
+@keyframes ln-intro {
+  0% {
+    transform: translate(-35%, 0%) rotateX(-100deg) rotateY(20deg) rotateZ(90deg);
+  }
+
+  100% {
+    transform: translate(-50%, 0%) rotateX(-100deg) rotateY(25deg) rotateZ(2deg);
   }
 }
 
 .up-animation {
-  animation: 2s up forwards;
-  transition: all 0.3s ease;
+  animation: 10s up forwards;
+  transition: all 0.3s ease-in;
 }
 
 @keyframes up {
   0% {
-    transform: translate(-52%, -50%) rotateX(-110deg) rotateY(30deg) rotateZ(5deg);
+    transform: translate(-50%, 0%) rotateX(-100deg) rotateY(20deg) rotateZ(2deg);
   }
 
   100% {
-    transform: translate(-52%, -50%) rotateX(0deg) rotateY(-15deg) rotateZ(-10deg) ;
+    transform: translate(0%, -20%) rotateX(0deg) rotateY(20deg) rotateZ(0deg);
   }
 
 }
 
 
 .down-animation {
-  animation: 2s down forwards;
-  transition: all 0.3s ease;
+  animation: 10s down forwards;
+  transition: all 0.3s ease-in;
 }
 
 @keyframes down {
   0% {
-    transform: translate(-52%, -50%) rotateX(-110deg) rotateZ(5deg) rotateY(30deg);
+    transform: translate(-50%, 0%) rotateX(-100deg) rotateY(20deg) rotateZ(2deg);
   }
 
   100% {
-    transform: translate(-52%, -50%) rotateX(-180deg) rotateZ(-15deg) rotateY(-15deg);
-  }
+    transform: translate(-50%, 50%) rotateX(-100deg) rotateY(-45deg) rotateZ(-90deg);
+    }
 
 }
 
@@ -175,7 +191,7 @@
 
 @keyframes round {
   0% {
-    transform: translate(-52%, -50%) rotateX(-180deg) rotateZ(-15deg) rotateY(30deg);
+    transform: translate(-52%, -50%) rotateX(-100deg) rotateZ(-15deg) rotateY(30deg);
   }
 
   100% {

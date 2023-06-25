@@ -1,5 +1,44 @@
 const bg = document.querySelector(".bg");
-const url = "./resources/grainy.svg";
+// const url = "./resources/grainy.svg";
+
+// let x = 50;
+// let y = -50;
+// let countX = true;
+// let countY = true
+
+// function timerr() {
+//   if (countX) {
+//     ++x;
+
+
+//     if (x >= 150)
+//       countX = false;
+//   } else {
+//     --x;
+
+//     if (x <= -100)
+//       countX = true;
+//   }
+
+//   if (countY) {
+//     ++y;
+
+//     if (y >= 150)
+//       countY = false;
+
+//   } else {
+//     --y;
+
+//     if (y <= -100)
+//       countY = true;
+//   }
+
+//   const bgString = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${url})`;
+
+//   bg.style.background = bgString;
+// }
+
+// setInterval(timerr, 100);
 
 
 const surname = document.querySelector(".surname");
@@ -10,13 +49,6 @@ const projects = document.getElementById("projects");
 const projectsContent = Array.from(
   document.querySelector(".projects").children
 );
-
-// window.addEventListener('DOMContentLoaded', function() {
-//   var parent = document.querySelector('.bg');
-//   var shadow = document.getElementById('.bg-shadow');
-//   parent.style.width = parent.offsetHeight + 'px';
-//   shadow.style.width = parent.offsetHeight + 'px';
-// });
 
 about.addEventListener("click", () => {
   surname.classList.remove("intro-animation");
@@ -35,6 +67,7 @@ about.addEventListener("click", () => {
   }, 10);
 });
 
+// projectsContent.style.width = bg.offsetWidth * 0.75
 projects.addEventListener("click", () => {
   firstName.classList.remove("intro-animation");
   projects.classList.add("active");
@@ -42,6 +75,8 @@ projects.addEventListener("click", () => {
   contact.classList.remove("active")
   surname.classList.remove("intro-animation");
   firstName.classList.add("round-animation");
+
+
   surname.classList.add("round-animation");
   projectsContent.forEach((project, index) => {
 

@@ -1,10 +1,10 @@
 .projects {
-  width: 35%;
   height: fit-content;
   box-sizing: border-box;
-  position: relative;
-  top: 5%;
-  left: 5%;
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  transform: translate(50%, -50%);
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
