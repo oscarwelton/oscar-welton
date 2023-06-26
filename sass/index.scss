@@ -1,6 +1,5 @@
 @import 'media';
 @import 'reset';
-@import 'box';
 @import 'navbar';
 @import 'name';
 @import 'contact';
@@ -20,7 +19,6 @@ body {
   min-width: 250px;
   font-family: var(--sans);
   position: fixed;
-  z-index: -5;
 }
 
 .d-none {
@@ -32,38 +30,55 @@ body {
   position: fixed;
   z-index: -1;
   top: 50%;
-  left: -40%;
-  height: 180%;
-  box-shadow: inset -30px 50px 25px 20px rgba(0, 0, 0, 0.5);
+  left: 50%;
+  height: 50vw;
+  width: 50vw;
+  box-shadow: inset -70px 30px 30px 10px rgba(0, 0, 0, 0.5);
   background-color: transparent;
-  transform: translate(0%, -50%);
+  transform: translate(-50%, -50%);
 }
-
 
 .bg {
   border-radius: 50%;
   position: fixed;
   z-index: -2;
   top: 50%;
-  left: -40%;
-  height: 180%;
+  left: 50%;
+  height: 50vw;
+  width: 50vw;
   overflow: hidden;
-  filter: contrast(400%) brightness(100%);
-  transform: translate(0%, -50%);
+  filter: contrast(300%) brightness(100%);
+  transform: translate(-50%, -50%);
   background-position: 0%;
+  background-size: cover;
   background:
     radial-gradient(circle at 10% 150%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
     url('./../resources/grainy.svg');
-  animation: move 10s linear infinite;
-
+  animation: move 4s linear infinite;
 }
 
 // @keyframes move {
 //   0% {
-//     background-position: 100% 0%;
+//     filter: contrast(300%) brightness(200%);
+
 //   }
 
 //   100% {
-//     background-position: 0 100%;
+//     filter: contrast(300%) brightness(100%);
 //   }
 // }
+
+.left {
+  animation: left 3s forwards;
+}
+
+
+@keyframes left {
+  0% {
+    left: 50%;
+  }
+
+  100% {
+    left: 75%;
+  }
+}

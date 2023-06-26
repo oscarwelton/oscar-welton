@@ -1,22 +1,11 @@
 .contact-container {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translate(-10%, -50%);
-  height: 60%;
-  width: 35%;
-  transform-style: preserve-3d;
   padding: 1rem;
   box-sizing: border-box;
-
-  .contact-form {
-    position: relative;
-    transform: translateZ(1px);
-  }
+  position: relative;
+  width: 40vw;
 }
 
 .contact-form {
-
   input {
     border: none;
     font-size: 2rem;

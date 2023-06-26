@@ -1,10 +1,10 @@
 .projects {
-  height: fit-content;
+  padding: 1rem;
+  height: 100%;
+  width: 50%;
+  overflow: scroll;
   box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  right: 25%;
-  transform: translate(50%, -50%);
+  transform: translate(0%, 0%);
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
@@ -12,33 +12,34 @@
   }
 
   .project {
-    margin: 1rem 0
+    margin: 2rem 0
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: 5px;
-    font-weight: 100;
+    font-weight: 700;
     font-family: var(--sans-serif);
     margin-bottom: 0.5rem;
   }
 
   .date {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     font-family: var(--serif);
   }
 
   .technologies {
     margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.25rem;
+    font-weight: 300;
     font-family: var(--sans-serif);
   }
 
   p {
     margin: 0.5rem 0;
     text-align: justify;
+    font-weight: 100;
   }
 
   .project-link {
@@ -47,10 +48,11 @@
   }
 
   a {
-    color: whitesmoke;
+    font-family: var(--serif);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 100;
+    color: black;
   }
 }
 

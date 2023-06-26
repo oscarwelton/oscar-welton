@@ -1,4 +1,8 @@
 const bg = document.querySelector(".bg");
+const bgShadow = document.querySelector(".bg-shadow");
+
+
+
 // const url = "./resources/grainy.svg";
 
 // let x = 50;
@@ -43,54 +47,58 @@ const bg = document.querySelector(".bg");
 
 const surname = document.querySelector(".surname");
 const firstName = document.querySelector(".first-name");
-const about = document.getElementById("about");
-const projects = document.getElementById("projects");
+const projectsButton = document.getElementById("projects");
+const projects = document.querySelector(".projects")
 
-const projectsContent = Array.from(
-  document.querySelector(".projects").children
-);
 
-about.addEventListener("click", () => {
-  surname.classList.remove("intro-animation");
+projectsButton.addEventListener("click", () => {
   firstName.classList.remove("intro-animation");
-  about.classList.add("active");
-  projects.classList.remove("active");
-  contact.classList.remove("active");
-
-
-  setTimeout(() => {
-    surname.style.transition = "";
-    firstName.style.transition = "";
-
-    firstName.classList.add("up-animation");
-    surname.classList.add("down-animation");
-  }, 10);
-});
-
-// projectsContent.style.width = bg.offsetWidth * 0.75
-projects.addEventListener("click", () => {
-  firstName.classList.remove("intro-animation");
-  projects.classList.add("active");
-  about.classList.remove("active");
+  projectsButton.classList.add("active");
   contact.classList.remove("active")
   surname.classList.remove("intro-animation");
-  firstName.classList.add("round-animation");
+  bg.classList.add("left");
+  bgShadow.classList.add("left");
+  contactForm.classList.add("d-none");
+  projects.classList.remove("d-none");
+  projects.classList.add("fade");
 
-
-  surname.classList.add("round-animation");
-  projectsContent.forEach((project, index) => {
-
-    setTimeout(() => {
-      project.classList.remove("d-none");
-      project.classList.add("fade");
-    }, 400 * index);
-  });
 });
 
 
-const contactForm = document.querySelector(".contact-container");
+const contactForm = document.querySelector(".links-div");
 contact.addEventListener("click", () => {
+  firstName.classList.remove("intro-animation");
+  surname.classList.remove("intro-animation");
+  firstName.classList.add("rotate-left-animation");
+  surname.classList.add("rotate-right-animation");
   contactForm.classList.remove("d-none");
+  contactForm.classList.add("fade");
   contact.classList.add("active");
-  projects.classList.remove("active")
+  projectsButton.classList.remove("active");
+  projects.classList.add("d-none");
+  bg.classList.add("left");
+  bgShadow.classList.add("left");
 });
+
+
+
+const firstNameSpans = Array.from(document.querySelectorAll(".first-name span"));
+const lastNameSpans = Array.from(document.querySelectorAll(".surname span"));
+
+
+function updateFontSize() {
+  const width = bg.offsetWidth;
+  const firstFontSize = (width / 2.5) + 'px';
+  const lastFontSize = (width / 3) + 'px';
+
+  firstNameSpans.forEach((span) => {
+    span.style.fontSize = firstFontSize;
+  })
+
+  lastNameSpans.forEach((span) => {
+    span.style.fontSize = lastFontSize;
+  })
+}
+
+updateFontSize();
+window.addEventListener('resize', updateFontSize);
