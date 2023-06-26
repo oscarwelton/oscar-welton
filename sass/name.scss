@@ -1,4 +1,5 @@
 .first-name {
+  z-index: 2;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -61,11 +62,11 @@
 
 @keyframes fn-intro {
   0% {
-    transform: translate(10%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(100deg);
+    transform: translate(5%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(100deg);
   }
 
   100% {
-    transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(0deg);
+    transform: translate(0%, 0%) rotateX(-40deg) rotateY(0deg) rotateZ(0deg);
   }
 }
 
@@ -138,7 +139,7 @@
 
 @keyframes ln-intro {
   0% {
-    transform: translate(10%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(100deg);
+    transform: translate(5%, 0%) rotateX(-135deg) rotateY(0deg) rotateZ(100deg);
   }
 
   100% {

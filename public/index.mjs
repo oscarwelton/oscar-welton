@@ -1,8 +1,6 @@
 const bg = document.querySelector(".bg");
 const bgShadow = document.querySelector(".bg-shadow");
 
-
-
 // const url = "./resources/grainy.svg";
 
 // let x = 50;
@@ -13,7 +11,6 @@ const bgShadow = document.querySelector(".bg-shadow");
 // function timerr() {
 //   if (countX) {
 //     ++x;
-
 
 //     if (x >= 150)
 //       countX = false;
@@ -44,26 +41,22 @@ const bgShadow = document.querySelector(".bg-shadow");
 
 // setInterval(timerr, 100);
 
-
 const surname = document.querySelector(".surname");
 const firstName = document.querySelector(".first-name");
 const projectsButton = document.getElementById("projects");
-const projects = document.querySelector(".projects")
-
+const projects = document.querySelector(".projects");
 
 projectsButton.addEventListener("click", () => {
   firstName.classList.remove("intro-animation");
   projectsButton.classList.add("active");
-  contact.classList.remove("active")
+  contact.classList.remove("active");
   surname.classList.remove("intro-animation");
   bg.classList.add("left");
   bgShadow.classList.add("left");
   contactForm.classList.add("d-none");
   projects.classList.remove("d-none");
   projects.classList.add("fade");
-
 });
-
 
 const contactForm = document.querySelector(".links-div");
 contact.addEventListener("click", () => {
@@ -80,25 +73,41 @@ contact.addEventListener("click", () => {
   bgShadow.classList.add("left");
 });
 
-
-
-const firstNameSpans = Array.from(document.querySelectorAll(".first-name span"));
+const firstNameSpans = Array.from(
+  document.querySelectorAll(".first-name span")
+);
 const lastNameSpans = Array.from(document.querySelectorAll(".surname span"));
-
 
 function updateFontSize() {
   const width = bg.offsetWidth;
-  const firstFontSize = (width / 2.5) + 'px';
-  const lastFontSize = (width / 3) + 'px';
+  const firstFontSize = width / 2.5 + "px";
+  const lastFontSize = width / 3 + "px";
 
   firstNameSpans.forEach((span) => {
     span.style.fontSize = firstFontSize;
-  })
+  });
 
   lastNameSpans.forEach((span) => {
     span.style.fontSize = lastFontSize;
-  })
+  });
 }
 
 updateFontSize();
-window.addEventListener('resize', updateFontSize);
+window.addEventListener("resize", updateFontSize);
+
+const eye = document.querySelector(".eye");
+const pupil = document.querySelector(".pupil");
+const elipse = document.querySelector(".elipse");
+
+elipse.addEventListener("animationend", () => {
+  bgShadow.addEventListener("mousemove", function (e) {
+    elipse.classList.remove("open");
+    var x = e.clientX / 10;
+    var y = e.clientY / 10;
+
+    elipse.style.height = y + "%";
+
+    eye.style.clipPath = `circle(40% at ${x - 5}% ${y + 10}%)`;
+    pupil.style.clipPath = `circle(17% at ${x - 5}% ${y + 10}%)`;
+  });
+});
