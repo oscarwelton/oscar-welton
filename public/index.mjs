@@ -105,9 +105,23 @@ elipse.addEventListener("animationend", () => {
     var x = e.clientX / 10;
     var y = e.clientY / 10;
 
+    pupil.classList.add("pupil-grow");
     elipse.style.height = y + "%";
 
     eye.style.clipPath = `circle(40% at ${x - 5}% ${y + 10}%)`;
     pupil.style.clipPath = `circle(17% at ${x - 5}% ${y + 10}%)`;
   });
 });
+
+
+function blink() {
+// if mouseover on bg is not happening;
+
+  // remove fn-animation
+  // add blink animation
+
+  //remove ln-animation
+  //add blink animation
+
+  //add elipse aniimation to set height to zero and back again
+}
