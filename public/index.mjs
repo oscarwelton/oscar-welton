@@ -115,6 +115,11 @@ setTimeout(() => {
 
 const linkFontSize = bg.offsetWidth / 10 + "px";
 document.querySelector(".eye h1").style.fontSize = linkFontSize;
+const navbar = Array.from(document.querySelectorAll(".navbar h4"));
+
+navbar.forEach((navItem) => {
+  navItem.style.fontSize = bg.offsetWidth / 13 + "px";
+})
 
 function blink() {
   firstName.classList.remove("fn-animation");
