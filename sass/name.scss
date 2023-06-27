@@ -62,7 +62,11 @@
 
 @keyframes fn-intro {
   0% {
-    transform: translate(5%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(100deg);
+    transform: translate(5%, -15%) rotateX(-90deg) rotateY(0deg) rotateZ(100deg);
+  }
+
+  50% {
+    transform: translate(0%, -15%) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
   }
 
   100% {
@@ -139,7 +143,12 @@
 
 @keyframes ln-intro {
   0% {
-    transform: translate(5%, 0%) rotateX(-135deg) rotateY(0deg) rotateZ(100deg);
+    transform: translate(5%, 10%) rotateX(-90deg) rotateY(0deg) rotateZ(-100deg);
+  }
+
+  50% {
+    transform: translate(0%, 10%) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+
   }
 
   100% {
@@ -159,7 +168,7 @@
 
   100% {
     transform: translate(0%, 0%) rotateX(0deg) rotateY(-45deg) rotateZ(45deg) rotate(45deg);
-    }
+  }
 
 }
 
@@ -176,7 +185,7 @@
 
   100% {
     transform: translate(0%, 0%) rotateX(0deg) rotateY(-130deg) rotateZ(45deg) rotate(45deg);
-    }
+  }
 
 }
 
@@ -189,6 +198,7 @@
   0% {
     transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(0deg);
   }
+
   100% {
     transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(360deg);
   }
@@ -204,6 +214,7 @@
   0% {
     transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(0deg);
   }
+
   100% {
     transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(-360deg);
   }

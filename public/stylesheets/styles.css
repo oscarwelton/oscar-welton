@@ -186,7 +186,10 @@ table {
 
 @keyframes fn-intro {
   0% {
-    transform: translate(5%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(100deg);
+    transform: translate(5%, -15%) rotateX(-90deg) rotateY(0deg) rotateZ(100deg);
+  }
+  50% {
+    transform: translate(0%, -15%) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
   }
   100% {
     transform: translate(0%, 0%) rotateX(-40deg) rotateY(0deg) rotateZ(0deg);
@@ -253,7 +256,10 @@ table {
 
 @keyframes ln-intro {
   0% {
-    transform: translate(5%, 0%) rotateX(-135deg) rotateY(0deg) rotateZ(100deg);
+    transform: translate(5%, 10%) rotateX(-90deg) rotateY(0deg) rotateZ(-100deg);
+  }
+  50% {
+    transform: translate(0%, 10%) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
   }
   100% {
     transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(0deg);
@@ -497,7 +503,8 @@ body {
   }
 }
 .open {
-  animation: eye 1.5s ease-in forwards;
+  animation: eye 0.5s ease-in forwards;
+  animation-delay: 1s;
 }
 
 @keyframes eye {
@@ -520,5 +527,50 @@ body {
   100% {
     height: 100%;
     width: 100%;
+  }
+}
+.blink-top {
+  animation: blinkTop 1.5s linear forwards;
+}
+
+@keyframes blinkTop {
+  0% {
+    transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(0%, -15%) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+.blink-bottom {
+  animation: blinkBottom 1.5s linear forwards;
+}
+
+@keyframes blinkBottom {
+  0% {
+    transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(0%, 10%) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+.blink {
+  animation: blink 1.5s ease-in forwards;
+}
+
+@keyframes blink {
+  0% {
+    height: 30%;
+  }
+  50% {
+    height: 0%;
+  }
+  100% {
+    height: 30%;
   }
 }

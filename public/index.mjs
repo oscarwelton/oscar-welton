@@ -1,46 +1,6 @@
 const bg = document.querySelector(".bg");
 const bgShadow = document.querySelector(".bg-shadow");
 
-// const url = "./resources/grainy.svg";
-
-// let x = 50;
-// let y = -50;
-// let countX = true;
-// let countY = true
-
-// function timerr() {
-//   if (countX) {
-//     ++x;
-
-//     if (x >= 150)
-//       countX = false;
-//   } else {
-//     --x;
-
-//     if (x <= -100)
-//       countX = true;
-//   }
-
-//   if (countY) {
-//     ++y;
-
-//     if (y >= 150)
-//       countY = false;
-
-//   } else {
-//     --y;
-
-//     if (y <= -100)
-//       countY = true;
-//   }
-
-//   const bgString = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${url})`;
-
-//   bg.style.background = bgString;
-// }
-
-// setInterval(timerr, 100);
-
 const surname = document.querySelector(".surname");
 const firstName = document.querySelector(".first-name");
 const projectsButton = document.getElementById("projects");
@@ -59,6 +19,7 @@ projectsButton.addEventListener("click", () => {
 });
 
 const contactForm = document.querySelector(".links-div");
+
 contact.addEventListener("click", () => {
   firstName.classList.remove("intro-animation");
   surname.classList.remove("intro-animation");
@@ -101,6 +62,9 @@ const elipse = document.querySelector(".elipse");
 
 elipse.addEventListener("animationend", () => {
   bgShadow.addEventListener("mousemove", function (e) {
+    eye.style.transition = "";
+    pupil.style.transition = "";
+
     elipse.classList.remove("open");
     var x = e.clientX / 10;
     var y = e.clientY / 10;
@@ -113,15 +77,67 @@ elipse.addEventListener("animationend", () => {
   });
 });
 
-
 function blink() {
-// if mouseover on bg is not happening;
+  firstName.classList.remove("fn-animation");
+  firstName.classList.add("blink-top");
 
-  // remove fn-animation
-  // add blink animation
 
-  //remove ln-animation
-  //add blink animation
+  surname.classList.remove("ln-animation");
+  surname.classList.add("blink-bottom");
 
-  //add elipse aniimation to set height to zero and back again
+  elipse.classList.remove("open");
+  elipse.classList.add("blink");
 }
+
+
+
+bgShadow.addEventListener("mouseout", function () {
+  eye.style.transition = "clip-path 0.5s ease";
+  pupil.style.transition = "clip-path 0.5s ease";
+  eye.style.clipPath = `circle(40% at 50% 50%)`;
+  pupil.style.clipPath = `circle(15% at 50% 50%)`;
+
+  blink();
+});
+
+
+
+// const url = "./resources/grainy.svg";
+
+// let x = 50;
+// let y = -50;
+// let countX = true;
+// let countY = true
+
+// function timerr() {
+//   if (countX) {
+//     ++x;
+
+//     if (x >= 150)
+//       countX = false;
+//   } else {
+//     --x;
+
+//     if (x <= -100)
+//       countX = true;
+//   }
+
+//   if (countY) {
+//     ++y;
+
+//     if (y >= 150)
+//       countY = false;
+
+//   } else {
+//     --y;
+
+//     if (y <= -100)
+//       countY = true;
+//   }
+
+//   const bgString = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${url})`;
+
+//   bg.style.background = bgString;
+// }
+
+// setInterval(timerr, 100);
