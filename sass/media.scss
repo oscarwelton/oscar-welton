@@ -1,26 +1,26 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .bg {
-    height: 95vw;
-    width: 95vw;
+    height: 100vw;
+    width: 100vw;
   }
 
   .bg-shadow {
-    height: 95vw;
-    width: 95vw;
+    height: 100vw;
+    width: 100vw;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .bg {
-    height: 90vw;
-    width: 90vw;
+    height: 100vw;
+    width: 100vw;
   }
 
   .bg-shadow {
-    height: 90vw;
-    width: 90vw;
+    height: 100vw;
+    width: 100vw;
   }
 }
 
