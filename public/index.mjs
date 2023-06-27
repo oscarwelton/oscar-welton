@@ -31,8 +31,11 @@ projectsButton.addEventListener("click", () => {
   projectsButton.classList.add("active");
   contact.classList.remove("active");
   surname.classList.remove("intro-animation");
-  bg.classList.add("left");
-  bgShadow.classList.add("left");
+  bg.style.animation = "";
+  bgShadow.style.animation = "";
+
+  bg.classList.add("move-eye");
+  bgShadow.classList.add("move-eye");
   projects.classList.remove("d-none");
   projects.classList.add("fade");
 });
@@ -102,6 +105,7 @@ function linksFontSize() {
   });
 
   const connect = document.querySelector(".eye h1");
+  connect.style.transition = "font-size 3s";
   connect.fontSize = linkFontSize;
 }
 

@@ -53,7 +53,6 @@ body {
   background:
     radial-gradient(circle at 10% 150%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
     url('./../resources/grainy.svg');
-  animation: move 4s linear infinite;
 }
 
 .elipse {
@@ -107,37 +106,12 @@ body {
   }
 }
 
-
-// @keyframes move {
-//   0% {
-//     filter: contrast(300%) brightness(200%);
-
-//   }
-
-//   100% {
-//     filter: contrast(300%) brightness(100%);
-//   }
-// }
-
-.left {
-  animation: left 3s forwards;
-}
-
-
-@keyframes left {
-  0% {
-    left: 50%;
-  }
-
-  100% {
-    left: 75%;
-  }
-}
-
 .open {
   animation: eye 0.5s ease-in forwards;
   animation-delay: 1s;
 }
+
+
 
 
 @keyframes eye {

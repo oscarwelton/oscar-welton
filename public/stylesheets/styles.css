@@ -12,23 +12,31 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .bg {
-    height: 100vw;
-    width: 100vw;
+    height: 90vw;
+    width: 90vw;
   }
   .bg-shadow {
-    height: 100vw;
-    width: 100vw;
+    height: 90vw;
+    width: 90vw;
   }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .bg {
-    height: 85vw;
-    width: 85vw;
+    height: 95vw;
+    width: 95vw;
   }
   .bg-shadow {
-    height: 85vw;
-    width: 85vw;
+    height: 95vw;
+    width: 95vw;
+  }
+  .projects {
+    width: 100%;
+    height: 50%;
+    top: 60%;
+  }
+  .move-eye {
+    animation: top 3s forwards;
   }
 }
 /* Large devices (laptops/desktops, 992px and up) */
@@ -40,6 +48,14 @@
   .bg-shadow {
     height: 70vw;
     width: 70vw;
+  }
+  .projects {
+    width: 50%;
+    height: 90%;
+    top: 5%;
+  }
+  .move-eye {
+    animation: left 3s forwards;
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -61,6 +77,22 @@
   .bg-shadow {
     height: 40vw;
     width: 40vw;
+  }
+}
+@keyframes left {
+  0% {
+    left: 50%;
+  }
+  100% {
+    left: 75%;
+  }
+}
+@keyframes top {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 30%;
   }
 }
 html, body, div, span, applet, object, iframe,
@@ -115,18 +147,18 @@ table {
 
 .navbar {
   position: fixed;
+  width: 100%;
   top: 0;
-  right: 0;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
 }
 .navbar h4 {
   text-align: right;
   font-size: 2rem;
   letter-spacing: 5px;
   width: fit-content;
-  margin: 0;
+  margin: 2rem;
   font-weight: 100;
 }
 .navbar h4:hover {
@@ -428,9 +460,8 @@ textPath a:hover {
 }
 
 .projects {
-  padding: 1rem;
-  height: 100%;
-  width: 50%;
+  position: absolute;
+  padding: 2rem;
   overflow: scroll;
   box-sizing: border-box;
   transform: translate(0%, 0%);
@@ -535,7 +566,6 @@ body {
   background-position: 0%;
   background-size: cover;
   background: radial-gradient(circle at 10% 150%, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("./../resources/grainy.svg");
-  animation: move 4s linear infinite;
 }
 
 .elipse {
@@ -583,18 +613,6 @@ body {
   }
   100% {
     height: 100%;
-  }
-}
-.left {
-  animation: left 3s forwards;
-}
-
-@keyframes left {
-  0% {
-    left: 50%;
-  }
-  100% {
-    left: 75%;
   }
 }
 .open {
