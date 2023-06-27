@@ -40,8 +40,6 @@ projectsButton.addEventListener("click", () => {
   projects.classList.add("fade");
 });
 
-const links = document.querySelector(".links-div");
-
 contact.addEventListener("click", () => {
   bgShadow.removeEventListener("mousemove", eyeTrack);
 
@@ -105,14 +103,18 @@ function linksFontSize() {
   });
 
   const connect = document.querySelector(".eye h1");
+  connect.style.fontSize = linkFontSize;
   connect.style.transition = "font-size 3s";
-  connect.fontSize = linkFontSize;
 }
 
 setTimeout(() => {
   bgShadow.addEventListener("mousemove", eyeTrack);
 }, 2000);
 
+
+
+const linkFontSize = bg.offsetWidth / 10 + "px";
+document.querySelector(".eye h1").style.fontSize = linkFontSize;
 
 function blink() {
   firstName.classList.remove("fn-animation");
