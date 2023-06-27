@@ -1,3 +1,15 @@
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .bg .bg-shadow {
+    height: 90vw;
+    width: 90vw;
+  }
+}
+@media all and (max-width: 480px) {
+  .bg .bg-shadow {
+    height: 90vw;
+    width: 90vw;
+  }
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -69,29 +81,42 @@ table {
 }
 
 .links-div {
-  padding: 1rem;
+  z-index: 0;
   position: absolute;
+  height: 50vw;
+  width: 50vw;
   top: 50%;
-  transform: translate(20%, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .links-div ul {
   list-style: none;
   padding: 0;
 }
-.links-div li {
-  font-size: 1.5rem;
-  line-height: 3rem;
-  font-weight: 100;
-}
-.links-div li a {
-  color: black;
+
+textPath a {
   text-decoration: none;
+  font-family: var(--serif);
+  font-size: 18rem;
+  fill: black;
+  pointer-events: none;
 }
-.links-div li li:hover::after {
-  color: black;
-  content: "->";
+textPath a:hover {
+  fill: silver;
 }
 
+.rotate-links {
+  animation: links 60s linear infinite;
+}
+
+@keyframes links {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 .strikethrough {
   position: relative;
 }
@@ -301,7 +326,7 @@ table {
     transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(0deg);
   }
   100% {
-    transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(360deg);
+    transform: translate(0%, -5%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 }
 .rotate-right-animation {
@@ -314,7 +339,7 @@ table {
     transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(0deg);
   }
   100% {
-    transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(-360deg);
+    transform: translate(0%, 5%) rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
   }
 }
 .contact-container {
@@ -429,6 +454,7 @@ body {
 .bg-shadow {
   border-radius: 50%;
   position: fixed;
+  overflow: hidden;
   z-index: -1;
   top: 50%;
   left: 50%;
@@ -474,8 +500,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  clip-path: circle(40% at 50% 50%);
+  background-color: white;
+  clip-path: circle(30% at 50% 50%);
 }
 .elipse .eye h1 {
   z-index: 1;
@@ -490,6 +516,18 @@ body {
   border-radius: 50%;
 }
 
+.links-elipse {
+  animation: elipseLinks 2s linear forwards;
+}
+
+@keyframes elipseLinks {
+  0% {
+    height: 30%;
+  }
+  100% {
+    height: 100%;
+  }
+}
 .left {
   animation: left 3s forwards;
 }

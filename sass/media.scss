@@ -12,9 +12,16 @@
  }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
+  .bg .bg-shadow {
+    height: 90vw;
+    width: 90vw;
+  }
 
  }
 
 @media all and (max-width: 480px) {
-
+  .bg .bg-shadow {
+    height: 90vw;
+    width: 90vw;
+  }
 }

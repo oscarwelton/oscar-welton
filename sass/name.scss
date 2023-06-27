@@ -200,7 +200,7 @@
   }
 
   100% {
-    transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(360deg);
+    transform: translate(0%, -5%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 }
 
@@ -216,6 +216,6 @@
   }
 
   100% {
-    transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(-360deg);
+    transform: translate(0%, 5%) rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
   }
 }
