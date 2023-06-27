@@ -15,7 +15,7 @@
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 3rem;
     letter-spacing: 5px;
     font-weight: 700;
     font-family: var(--sans-serif);
@@ -23,19 +23,20 @@
   }
 
   .date {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
     font-family: var(--serif);
   }
 
   .technologies {
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 300;
     font-family: var(--sans-serif);
   }
 
   p {
+    font-size: 1rem;
     margin: 0.5rem 0;
     text-align: justify;
     font-weight: 100;
@@ -49,7 +50,7 @@
   a {
     font-family: var(--serif);
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 2rem;
     font-weight: 100;
     color: black;
   }
