@@ -34,8 +34,8 @@ body {
   z-index: -1;
   top: 50%;
   left: 50%;
-  height: 50vw;
-  width: 50vw;
+  // height: 50vw;
+  // width: 50vw;
   box-shadow: inset -70px 30px 30px 10px rgba(0, 0, 0, 0.5);
   background-color: transparent;
   transform: translate(-50%, -50%);
@@ -47,8 +47,8 @@ body {
   z-index: -2;
   top: 50%;
   left: 50%;
-  height: 50vw;
-  width: 50vw;
+  // height: 50vw;
+  // width: 50vw;
   overflow: hidden;
   filter: contrast(300%) brightness(100%);
   transform: translate(-50%, -50%);
@@ -78,7 +78,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: black;
     clip-path: circle(30% at 50% 50%);
 
     h1 {
@@ -87,6 +87,7 @@ body {
       font-family: serif;
       font-size: 1rem;
       letter-spacing: 5px;
+      text-align: center;
     }
   }
 

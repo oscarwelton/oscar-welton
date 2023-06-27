@@ -1,13 +1,66 @@
-@media all and (min-width: 480px) and (max-width: 768px) {
-  .bg .bg-shadow {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .bg {
+    height: 95vw;
+    width: 95vw;
+  }
+  .bg-shadow {
+    height: 95vw;
+    width: 95vw;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .bg {
+    height: 90vw;
+    width: 90vw;
+  }
+  .bg-shadow {
     height: 90vw;
     width: 90vw;
   }
 }
-@media all and (max-width: 480px) {
-  .bg .bg-shadow {
-    height: 90vw;
-    width: 90vw;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .bg {
+    height: 85vw;
+    width: 85vw;
+  }
+  .bg-shadow {
+    height: 85vw;
+    width: 85vw;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .bg {
+    height: 70vw;
+    width: 70vw;
+  }
+  .bg-shadow {
+    height: 70vw;
+    width: 70vw;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .bg {
+    height: 50vw;
+    width: 50vw;
+  }
+  .bg-shadow {
+    height: 50vw;
+    width: 50vw;
+  }
+}
+@media all and (min-width: 2000px) {
+  .bg {
+    height: 40vw;
+    width: 40vw;
+  }
+  .bg-shadow {
+    height: 40vw;
+    width: 40vw;
   }
 }
 html, body, div, span, applet, object, iframe,
@@ -97,7 +150,7 @@ table {
 textPath a {
   text-decoration: none;
   font-family: var(--serif);
-  font-size: 18rem;
+  font-size: 25rem;
   fill: black;
   pointer-events: none;
 }
@@ -458,8 +511,6 @@ body {
   z-index: -1;
   top: 50%;
   left: 50%;
-  height: 50vw;
-  width: 50vw;
   box-shadow: inset -70px 30px 30px 10px rgba(0, 0, 0, 0.5);
   background-color: transparent;
   transform: translate(-50%, -50%);
@@ -471,8 +522,6 @@ body {
   z-index: -2;
   top: 50%;
   left: 50%;
-  height: 50vw;
-  width: 50vw;
   overflow: hidden;
   filter: contrast(300%) brightness(100%);
   transform: translate(-50%, -50%);
@@ -500,7 +549,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: black;
   clip-path: circle(30% at 50% 50%);
 }
 .elipse .eye h1 {
@@ -509,6 +558,7 @@ body {
   font-family: serif;
   font-size: 1rem;
   letter-spacing: 5px;
+  text-align: center;
 }
 .elipse .pupil {
   position: relative;

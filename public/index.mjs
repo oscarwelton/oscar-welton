@@ -10,6 +10,22 @@ const eye = document.querySelector(".eye");
 const pupil = document.querySelector(".pupil");
 const elipse = document.querySelector(".elipse");
 
+function eyeTrack(e) {
+  eye.style.transition = "";
+    pupil.style.transition = "";
+
+    elipse.classList.remove("open");
+    var x = e.clientX / 10;
+    var y = e.clientY / 10;
+
+    pupil.classList.add("pupil-grow");
+    elipse.style.height = y + "%";
+
+    eye.style.clipPath = `circle(40% at ${x - 5}% ${y + 10}%)`;
+    pupil.style.clipPath = `circle(17% at ${x - 5}% ${y + 10}%)`;
+}
+
+
 projectsButton.addEventListener("click", () => {
   firstName.classList.remove("intro-animation");
   projectsButton.classList.add("active");
@@ -17,7 +33,6 @@ projectsButton.addEventListener("click", () => {
   surname.classList.remove("intro-animation");
   bg.classList.add("left");
   bgShadow.classList.add("left");
-  contactForm.classList.add("d-none");
   projects.classList.remove("d-none");
   projects.classList.add("fade");
 });
@@ -25,6 +40,8 @@ projectsButton.addEventListener("click", () => {
 const links = document.querySelector(".links-div");
 
 contact.addEventListener("click", () => {
+  bgShadow.removeEventListener("mousemove", eyeTrack);
+
   firstName.classList.remove("fn-animation");
   surname.classList.remove("ln-animation");
   firstName.classList.add("rotate-left-animation");
@@ -32,21 +49,16 @@ contact.addEventListener("click", () => {
 
   elipse.classList.remove("open");
   elipse.classList.add("links-elipse");
-
   elipse.style.maxHeight = "100%";
 
-  // document.querySelector(".eye h1").innerHTML = "Let's Connect.";
-  // document.querySelector(".eye h1").style.color = "white";
-
   const heading = document.querySelector(".eye h1");
-  heading.innerHTML = "Let's Connect.";
+  heading.innerHTML = "Let's <br> Connect.";
   heading.animate(
     { color: ["initial", "white"] },
     { duration: 300, fill: "both", delay: 500 }
   );
 
-  links.classList.remove("d-none");
-  // links.classList.add("rotate-links");
+  pupil.classList.remove("pupil-grow");
 
   contact.classList.add("active");
   projectsButton.classList.remove("active");
@@ -88,24 +100,15 @@ function linksFontSize() {
     contact.style.fontSize = linkFontSize;
     contact.style.pointerEvents = "auto";
   });
+
+  const connect = document.querySelector(".eye h1");
+  connect.fontSize = linkFontSize;
 }
 
-// elipse.addEventListener("animationend", () => {
-//   bgShadow.addEventListener("mousemove", function (e) {
-//     eye.style.transition = "";
-//     pupil.style.transition = "";
+setTimeout(() => {
+  bgShadow.addEventListener("mousemove", eyeTrack);
+}, 2000);
 
-//     elipse.classList.remove("open");
-//     var x = e.clientX / 10;
-//     var y = e.clientY / 10;
-
-//     pupil.classList.add("pupil-grow");
-//     elipse.style.height = y + "%";
-
-//     eye.style.clipPath = `circle(40% at ${x - 5}% ${y + 10}%)`;
-//     pupil.style.clipPath = `circle(17% at ${x - 5}% ${y + 10}%)`;
-//   });
-// });
 
 function blink() {
   firstName.classList.remove("fn-animation");
@@ -143,14 +146,14 @@ function updateCircleDiameter() {
 
 updateCircleDiameter();
 
-// bgShadow.addEventListener("mouseout", function () {
-//   eye.style.transition = "clip-path 0.5s ease";
-//   pupil.style.transition = "clip-path 0.5s ease";
-//   eye.style.clipPath = `circle(30% at 50% 50%)`;
-//   pupil.style.clipPath = `circle(15% at 50% 50%)`;
+bgShadow.addEventListener("mouseout", function () {
+  eye.style.transition = "clip-path 0.5s ease";
+  pupil.style.transition = "clip-path 0.5s ease";
+  eye.style.clipPath = `circle(30% at 50% 50%)`;
+  pupil.style.clipPath = `circle(15% at 50% 50%)`;
 
-//   // blink();
-// });
+  // blink();
+});
 
 // const url = "./resources/grainy.svg";
 
