@@ -161,7 +161,7 @@ function updateCircleDiameter() {
   var circlePath = svg.querySelector("#circle-path");
 
   var parentDivWidth = bgShadow.offsetWidth;
-  var diameter = parentDivWidth - 15;
+  var diameter = parentDivWidth - 50;
 
   var centerX = parentDivWidth / 2;
   var centerY = parentDivWidth / 2;
