@@ -17,8 +17,8 @@
 
 <body>
   <nav class="navbar">
-    <h4 id="projects" class="strikethrough">Projects</h4>
-    <h4 id="contact" class="strikethrough">Contact</h4>
+    <h4 id="projects" class="strikethrough-left">Projects</h4>
+    <h4 id="contact" class="strikethrough-right">Contact</h4>
     </h4>
   </nav>
 
@@ -52,12 +52,14 @@
           </text>
         </svg>
       </div>
-      <div class="eye">
-        <h1>Developer <br>&<br> Designer</h1>
-        <div class="pupil">
-        </div>
-      </div>
+      <span class="eye-wrap">
+        <div class="eye">
+          <h1>Designer <br> & <br> Developer</h1>
+          <div class="pupil">
+          </div>
+      </span>
     </div>
+  </div>
   </div>
 
   <div class="bg">
@@ -82,40 +84,80 @@
 
   <div class="projects d-none">
     <ul class="project">
-      <li class="title">Scramble <span class="date">June 2023</span></li>
-      <li class="technologies">Node | Express | Sass | Heroku</li>
+      <li class="project-header">
+        <h3 class="title">Scramble</h3>
+        <h4 class="date">June 2023</h4>
+      </li>
+      <li class="technologies">
+        <h6>Node</h6>
+        <h6>Express</h6>
+        <h6>Sass</h6>
+        <h6>Heroku</h6>
+      </li>
       <li class="description">
         <p>A single-page application inspired by Wordle. Scramble challenges players to solve the days anagram set.
           Using localStorage, API calls, and a custom-built algorithm, the app tracks and displays the user's progress.
         </p>
-        <p>This project was a step into the world of JavaScript.</p>
       </li>
-      <li class="project-link"><a target="_blank" href="https://github.com/oscposc/scramble">View on GitHub</a></li>
-      <li class="project-link"><a target="_blank" href="https://www.play-scramble.com/">View Site</a></li>
+
+      <li>
+        <div class="project-links">
+          <a class="project-link strikethrough-left" target="_blank" href="https://github.com/oscposc/scramble">View
+            Code</a>
+          <a class="project-link strikethrough-right" target="_blank" href="https://www.play-scramble.com/">View
+            Site</a>
+        </div>
+      </li>
+
+
+
     </ul>
+    <hr>
     <ul class="project">
-      <li class="title">Tweeter <span class="date">May 2023</span></li>
-      <li class="technologies">Ruby on Rails | Sass | TurboRails | Stimulus</li>
+      <li class="project-header">
+        <h3 class="title">Tweeter</h3>
+        <h4 class="date">May 2023</h4>
+      </li>
+      <li class="technologies">
+        <h6>Rails</h6>
+        <h6>Sass</h6>
+        <h6>TurboRails</h6>
+        <h6>Stimulus</h6>
+      </li>
       <li class="description">
         <p>Tweeter is a web app designed for mobile.
           The app uses the OpenAI API to generate tweets based on a users input.</p>
-        <p>Tweeter was a fun project with the object to consolidate learning.</p>
       </li>
+
+      <li>
+        <div class="project-links">
+          <a class="project-link strikethrough-left" target="_blank" href="https://github.com/oscposc/tweeter">View
+            Code</a>
+          <a class="project-link strikethrough-right" target="_blank" href="http://tweetergen.live/">View Site</a>
+        </div>
       </li>
-      <li class="project-link"><a target="_blank" href="https://github.com/oscposc/tweeter">View on GitHub</a></li>
-      <li class="project-link"><a target="_blank" href="http://tweetergen.live/">View Site</a></li>
     </ul>
+    <hr>
     <ul class="project">
-      <li class="title">Journo <span class="date">March 2023</span></li>
-      <li class="technologies">Ruby on Rails | Sass | Stimulus.js | OpenAI | TurboRails | SideKiq</li>
+      <li class="project-header">
+        <h3 class="title">Journo</h3>
+        <h4 class="date">March 2023</h4>
+      </li>
+      <li class="technologies">
+        <h6>Rails</h6>
+        <h6>Sass</h6>
+        <h6>Stimulus</h6>
+        <h6>TurboRails</h6>
+        <h6>SideKiq</h6>
+      </li>
       <li class="description">
         <p>Journo is an AI assisted travel planner. Giving users real-time, personalised information on their
           destination.
         </p>
-        <p>Users can create, update and managed itineraries and journal they travel experiences.</p>
       </li>
-      <li class="project-link"><a target="_blank" href="https://github.com/SarahKatherineFrancis/journo">View on
-          GitHub</a></li>
+      <li class="project-link strikethrough-left single-link"><a target="_blank"
+          href="https://github.com/SarahKatherineFrancis/journo">View Code</a>
+      </li>
     </ul>
   </div>
 

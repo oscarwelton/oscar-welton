@@ -10,6 +10,9 @@ const eye = document.querySelector(".eye");
 const pupil = document.querySelector(".pupil");
 const elipse = document.querySelector(".elipse");
 
+let contactClicked = false;
+let projectsClicked = false;
+
 function eyeTrack(e) {
   eye.style.transition = "";
     pupil.style.transition = "";
@@ -27,6 +30,7 @@ function eyeTrack(e) {
 
 
 projectsButton.addEventListener("click", () => {
+  bgShadow.removeEventListener("mousemove", eyeTrack);
   firstName.classList.remove("intro-animation");
   projectsButton.classList.add("active");
   contact.classList.remove("active");
@@ -38,6 +42,7 @@ projectsButton.addEventListener("click", () => {
   bgShadow.classList.add("move-eye");
   projects.classList.remove("d-none");
   projects.classList.add("fade");
+
 });
 
 contact.addEventListener("click", () => {
@@ -45,12 +50,19 @@ contact.addEventListener("click", () => {
 
   firstName.classList.remove("fn-animation");
   surname.classList.remove("ln-animation");
-  firstName.classList.add("rotate-left-animation");
-  surname.classList.add("rotate-right-animation");
+  firstName.classList.add("move-up-animation");
+  surname.classList.add("move-down-animation");
 
   elipse.classList.remove("open");
   elipse.classList.add("links-elipse");
   elipse.style.maxHeight = "100%";
+
+  bg.classList.remove("move-eye-left");
+  bgShadow.classList.remove("move-eye-left");
+
+  setTimeout(() => {
+    document.querySelector(".elipse span").classList.toggle("eye-wrap")
+  }, 600);
 
   const heading = document.querySelector(".eye h1");
   heading.innerHTML = "Let's <br> Connect.";
@@ -88,6 +100,7 @@ function updateFontSize() {
 }
 
 updateFontSize();
+
 window.addEventListener("resize", updateFontSize);
 
 const contactLinks = Array.from(document.querySelectorAll(".contact-link"));
@@ -111,8 +124,6 @@ setTimeout(() => {
   bgShadow.addEventListener("mousemove", eyeTrack);
 }, 2000);
 
-
-
 const linkFontSize = bg.offsetWidth / 10 + "px";
 document.querySelector(".eye h1").style.fontSize = linkFontSize;
 const navbar = Array.from(document.querySelectorAll(".navbar h4"));
@@ -121,16 +132,23 @@ navbar.forEach((navItem) => {
   navItem.style.fontSize = bg.offsetWidth / 13 + "px";
 })
 
-function blink() {
-  firstName.classList.remove("fn-animation");
-  firstName.classList.add("blink-top");
+// function blink() {
+//   firstName.classList.add("blink-top");
 
-  surname.classList.remove("ln-animation");
-  surname.classList.add("blink-bottom");
+//   surname.classList.add("blink-bottom");
 
-  elipse.classList.remove("open");
-  elipse.classList.add("blink");
-}
+//   elipse.classList.add("blink");
+
+//   setTimeout(() => {
+//     firstName.classList.remove("blink-top");
+
+//     surname.classList.remove("blink-bottom");
+
+//     elipse.classList.remove("blink");
+
+//   }, 3000);
+
+// }
 
 window.addEventListener("resize", updateCircleDiameter);
 
@@ -163,7 +181,7 @@ bgShadow.addEventListener("mouseout", function () {
   eye.style.clipPath = `circle(30% at 50% 50%)`;
   pupil.style.clipPath = `circle(15% at 50% 50%)`;
 
-  // blink();
+  blink();
 });
 
 // const url = "./resources/grainy.svg";

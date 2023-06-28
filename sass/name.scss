@@ -189,7 +189,7 @@
 
 }
 
-.rotate-left-animation {
+.move-up-animation {
   animation: 3s firstRotate forwards;
   transition: all 0.3s ease;
 }
@@ -204,7 +204,7 @@
   }
 }
 
-.rotate-right-animation {
+.move-down-animation {
   animation: 3s lastRotate forwards;
   transition: all 0.3s ease;
 }
@@ -216,6 +216,6 @@
   }
 
   100% {
-    transform: translate(0%, 5%) rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
+    transform: translate(0%, 7%) rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
   }
 }

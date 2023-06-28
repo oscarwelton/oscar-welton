@@ -1,16 +1,20 @@
 .navbar {
   position: fixed;
   width: 100%;
+  opacity: 0;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  animation: nav-intro 1s forwards;
+  animation-delay: 2s;
+  z-index: 5;
 
   h4 {
     text-align: right;
     letter-spacing: 5px;
     width: fit-content;
-    margin: 2rem;
+    margin: 0.5rem 2rem 2rem 2rem ;
     font-weight: 100;
 
     &:hover {
@@ -56,6 +60,8 @@ textPath {
 }
 
 
+
+
 .rotate-links {
   animation: links 60s linear infinite;
 }
@@ -69,11 +75,11 @@ textPath {
   }
 }
 
-.strikethrough {
+.strikethrough-left {
   position: relative;
 }
 
-.strikethrough::after {
+.strikethrough-left::after {
   content: "";
   position: absolute;
   left: 0;
@@ -86,7 +92,7 @@ textPath {
   transition: transform 0.3s ease-in-out;
 }
 
-.strikethrough.active::after {
+.strikethrough-left.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -94,16 +100,70 @@ textPath {
   width: 100%;
   height: 2px;
   background-color: black;
-  transform-origin: left;
   transform: scaleX(1);
+  transform-origin: left;
   transition: transform 0.3s ease-in-out;
 }
 
-.strikethrough.active {
+.strikethrough-left.active {
   opacity: 0.2;
   transition: transform 1s ease-in-out;
 }
 
-.strikethrough:hover::after {
+.strikethrough-left:hover::after {
   transform: scaleX(1);
+}
+
+
+
+.strikethrough-right {
+  position: relative;
+}
+
+.strikethrough-right::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 40%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.strikethrough-right.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 40%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.strikethrough-right.active {
+  opacity: 0.2;
+  transition: transform 1s ease-in-out;
+}
+
+.strikethrough-right:hover::after {
+  transform: scaleX(1);
+}
+
+
+
+@keyframes nav-intro {
+  0% {
+    top: -2%;
+    opacity: 0;
+  }
+  100% {
+    top: 0%;
+    opacity: 1;
+  }
 }

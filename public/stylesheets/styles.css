@@ -50,9 +50,14 @@
     width: 70vw;
   }
   .projects {
-    width: 50%;
-    height: 90%;
-    top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
   }
   .move-eye {
     animation: left 3s forwards;
@@ -148,16 +153,20 @@ table {
 .navbar {
   position: fixed;
   width: 100%;
+  opacity: 0;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  animation: nav-intro 1s forwards;
+  animation-delay: 2s;
+  z-index: 5;
 }
 .navbar h4 {
   text-align: right;
   letter-spacing: 5px;
   width: fit-content;
-  margin: 2rem;
+  margin: 0.5rem 2rem 2rem 2rem;
   font-weight: 100;
 }
 .navbar h4:hover {
@@ -208,11 +217,11 @@ textPath a:hover {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-.strikethrough {
+.strikethrough-left {
   position: relative;
 }
 
-.strikethrough::after {
+.strikethrough-left::after {
   content: "";
   position: absolute;
   left: 0;
@@ -225,7 +234,7 @@ textPath a:hover {
   transition: transform 0.3s ease-in-out;
 }
 
-.strikethrough.active::after {
+.strikethrough-left.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -233,20 +242,69 @@ textPath a:hover {
   width: 100%;
   height: 2px;
   background-color: black;
-  transform-origin: left;
   transform: scaleX(1);
+  transform-origin: left;
   transition: transform 0.3s ease-in-out;
 }
 
-.strikethrough.active {
+.strikethrough-left.active {
   opacity: 0.2;
   transition: transform 1s ease-in-out;
 }
 
-.strikethrough:hover::after {
+.strikethrough-left:hover::after {
   transform: scaleX(1);
 }
 
+.strikethrough-right {
+  position: relative;
+}
+
+.strikethrough-right::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 40%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.strikethrough-right.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 40%;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.strikethrough-right.active {
+  opacity: 0.2;
+  transition: transform 1s ease-in-out;
+}
+
+.strikethrough-right:hover::after {
+  transform: scaleX(1);
+}
+
+@keyframes nav-intro {
+  0% {
+    top: -2%;
+    opacity: 0;
+  }
+  100% {
+    top: 0%;
+    opacity: 1;
+  }
+}
 .first-name {
   z-index: 2;
   position: absolute;
@@ -407,7 +465,7 @@ textPath a:hover {
     transform: translate(0%, 0%) rotateX(0deg) rotateY(-130deg) rotateZ(45deg) rotate(45deg);
   }
 }
-.rotate-left-animation {
+.move-up-animation {
   animation: 3s firstRotate forwards;
   transition: all 0.3s ease;
 }
@@ -420,7 +478,7 @@ textPath a:hover {
     transform: translate(0%, -5%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 }
-.rotate-right-animation {
+.move-down-animation {
   animation: 3s lastRotate forwards;
   transition: all 0.3s ease;
 }
@@ -430,7 +488,7 @@ textPath a:hover {
     transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(0deg);
   }
   100% {
-    transform: translate(0%, 5%) rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
+    transform: translate(0%, 7%) rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
   }
 }
 .contact-container {
@@ -463,49 +521,59 @@ textPath a:hover {
   padding: 2rem;
   overflow: scroll;
   box-sizing: border-box;
-  transform: translate(0%, 0%);
   scrollbar-width: none;
 }
 .projects::-webkit-scrollbar {
   display: none;
 }
 .projects .project {
-  margin: 2rem 0;
+  margin: 2em 0;
+}
+.projects .project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .projects .title {
-  font-size: 3rem;
+  font-size: 3em;
   letter-spacing: 5px;
-  font-weight: 700;
-  font-family: var(--sans-serif);
+  font-weight: 100;
+  font-family: var(--serif);
   margin-bottom: 0.5rem;
 }
 .projects .date {
-  font-size: 2rem;
+  font-family: var(--sans-serif);
+  font-size: 1.5em;
   font-weight: 500;
-  font-family: var(--serif);
 }
 .projects .technologies {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+  font-size: 1.25em;
   font-weight: 300;
-  font-family: var(--sans-serif);
+  font-family: var(--sans);
+  display: flex;
+  justify-content: space-between;
 }
 .projects p {
-  font-size: 1rem;
-  margin: 0.5rem 0;
+  font-size: 1em;
+  margin: 0.5em 0;
   text-align: justify;
   font-weight: 100;
 }
-.projects .project-link {
-  display: inline-block;
-  margin-right: 3rem;
+.projects .project-links {
+  display: flex;
+  justify-content: space-between;
 }
 .projects a {
-  font-family: var(--serif);
+  font-family: var(--sans-serif);
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 2em;
   font-weight: 100;
   color: black;
+}
+
+.single-link {
+  width: fit-content;
 }
 
 .fade {
@@ -535,7 +603,8 @@ body {
   overflow: hidden;
   min-width: 250px;
   font-family: var(--sans);
-  position: fixed;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9590686616) 37%, rgba(160, 160, 160, 0.5837185216) 70%, rgba(0, 0, 0, 0.7573879894) 98%);
 }
 
 .d-none {
@@ -544,9 +613,9 @@ body {
 
 .bg-shadow {
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   overflow: hidden;
-  z-index: -1;
+  z-index: 2;
   top: 50%;
   left: 50%;
   box-shadow: inset -70px 30px 30px 10px rgba(0, 0, 0, 0.5);
@@ -556,8 +625,8 @@ body {
 
 .bg {
   border-radius: 50%;
-  position: fixed;
-  z-index: -2;
+  position: absolute;
+  z-index: 0;
   top: 50%;
   left: 50%;
   overflow: hidden;
@@ -685,4 +754,7 @@ body {
   100% {
     height: 30%;
   }
+}
+.eye-wrap {
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
