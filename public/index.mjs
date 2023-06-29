@@ -1,5 +1,6 @@
 import { eyeTrack } from "./js-modules/eye-track.mjs";
 import { updateCircleDiameter } from "./js-modules/circle-size.mjs";
+import { updateFontSize, linksFontSize } from "./js-modules/font-size.mjs"
 
 const bg = document.querySelector(".bg");
 const bgShadow = document.querySelector(".bg-shadow");
@@ -16,6 +17,10 @@ const elipse = document.querySelector(".elipse");
 let contactClicked = false;
 let projectsClicked = false;
 
+window.addEventListener("resize", updateFontSize, updateCircleDiameter);
+
+updateFontSize();
+updateCircleDiameter();
 
 projectsButton.addEventListener("click", () => {
   projectsClicked = true;
@@ -103,49 +108,7 @@ contact.addEventListener("click", () => {
 
   linksFontSize();
 
-  if (projectsClicked === true) {
-  }
 });
-
-const firstNameSpans = Array.from(
-  document.querySelectorAll(".first-name span")
-);
-const lastNameSpans = Array.from(document.querySelectorAll(".surname span"));
-
-function updateFontSize() {
-  const width = bg.offsetWidth;
-  const firstFontSize = width / 2.5 + "px";
-  const lastFontSize = width / 3 + "px";
-
-  firstNameSpans.forEach((span) => {
-    span.style.fontSize = firstFontSize;
-  });
-
-  lastNameSpans.forEach((span) => {
-    span.style.fontSize = lastFontSize;
-  });
-}
-
-updateFontSize();
-
-window.addEventListener("resize", updateFontSize);
-
-const contactLinks = Array.from(document.querySelectorAll(".contact-link"));
-
-function linksFontSize() {
-  const width = bg.offsetWidth;
-  const linkFontSize = width / 8.5 + "px";
-
-  contactLinks.forEach((contact) => {
-    contact.style.transition = "font-size 3s";
-    contact.style.fontSize = linkFontSize;
-    contact.style.pointerEvents = "auto";
-  });
-
-  const connect = document.querySelector(".eye h1");
-  connect.style.fontSize = linkFontSize;
-  connect.style.transition = "font-size 3s";
-}
 
 setTimeout(() => {
   bgShadow.addEventListener("mousemove", eyeTrack);
@@ -153,15 +116,11 @@ setTimeout(() => {
 
 const linkFontSize = bg.offsetWidth / 10 + "px";
 document.querySelector(".eye h1").style.fontSize = linkFontSize;
-const navbar = Array.from(document.querySelectorAll(".navbar h4"));
 
+const navbar = Array.from(document.querySelectorAll(".navbar h4"));
 navbar.forEach((navItem) => {
   navItem.style.fontSize = bg.offsetWidth / 13 + "px";
 });
-
-window.addEventListener("resize", updateCircleDiameter);
-
-updateCircleDiameter();
 
 bgShadow.addEventListener("mouseout", function () {
   eye.style.transition = "clip-path 0.5s ease";
