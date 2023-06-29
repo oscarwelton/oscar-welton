@@ -6,6 +6,7 @@
   scrollbar-width: none;
   margin-top: 5rem;
   transition-property: all;
+  transition: filter 0.3s ease;
 
   &::-webkit-scrollbar {
     display: none;

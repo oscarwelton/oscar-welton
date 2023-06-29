@@ -9,6 +9,7 @@
   box-shadow: inset -70px 30px 30px 10px rgba(0, 0, 0, 0.5);
   background-color: transparent;
   transform: translate(-50%, -50%);
+  transition: filter 0.3s ease;
 }
 
 .bg {
@@ -19,6 +20,7 @@
   left: 50%;
   overflow: hidden;
   filter: contrast(300%) brightness(100%);
+  transition: filter 0.3s ease;
   transform: translate(-50%, -50%);
   background-position: 0%;
   background-size: cover;
@@ -39,6 +41,8 @@
   opacity: 0.3;
   width: 100%;
   animation-delay: 2s;
+  transition: filter 0.3s ease;
+
 
   .eye {
     height: 100%;
@@ -47,6 +51,7 @@
     align-items: center;
     background-color: black;
     clip-path: circle(30% at 50% 50%);
+    transition: filter 0.3s ease;
 
     h1 {
       z-index: 1;
@@ -61,6 +66,7 @@
     position: relative;
     background-color: white;
     border-radius: 50%;
+    transition: filter 0.3s ease;
   }
 }
 
@@ -158,7 +164,7 @@
 .pupil-wrap {
   height: 100%;
   width: 100%;
-  filter: drop-shadow(0px 0px 10px rgb(217, 57, 57));
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
 
 

@@ -115,16 +115,15 @@ contact.addEventListener("click", () => {
   contact.classList.add("active");
   projectsButton.classList.remove("active");
 
-  projects.classList.add("slide-out");
-
-  projects.classList.remove("slide-in");
-
   linksFontSize();
 
   bg.classList.remove("move-eye-back");
   bgShadow.classList.remove("move-eye-back");
 
   if (projectClicked === true) {
+    projects.classList.add("slide-out");
+    projects.classList.remove("slide-in");
+
     bg.classList.remove("move-eye");
     bgShadow.classList.remove("move-eye");
 

@@ -60,6 +60,7 @@
   .slide-out {
     animation: slide-out-half 2s linear forwards;
   }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -84,6 +85,7 @@
 
   .slide-in {
     animation: slide-in-full 1s ease-in forwards;
+    animation-delay: 1s;
   }
 
   .slide-out {
