@@ -157,44 +157,63 @@
 }
 
 .up-animation {
-  animation: 5s up forwards;
+  animation: 3s up forwards;
   transition: all 0.3s ease-in;
 }
 
 @keyframes up {
   0% {
-    transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(0deg);
+    transform: translate(0%, 7%) rotateX(-180deg) rotateY(0deg) rotateZ(0deg);
   }
-
+  50% {
+    transform: translate(0%, 10%) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+  }
   100% {
-    transform: translate(0%, 0%) rotateX(0deg) rotateY(-45deg) rotateZ(45deg) rotate(45deg);
+    transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(0deg);
   }
 
 }
 
 
 .down-animation {
-  animation: 5s down forwards;
+  animation: 3s down forwards;
   transition: all 0.3s ease-in;
 }
 
 @keyframes down {
   0% {
-    transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(0deg);
+    transform: translate(0%, -5%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  50% {
+    transform: translate(0%, -15%) rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
   }
 
   100% {
-    transform: translate(0%, 0%) rotateX(0deg) rotateY(-130deg) rotateZ(45deg) rotate(45deg);
+    transform: translate(0%, 0%) rotateX(-40deg) rotateY(0deg) rotateZ(0deg);
   }
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 .move-up-animation {
-  animation: 3s firstRotate forwards;
+  animation: 3s up-animation forwards;
   transition: all 0.3s ease;
 }
 
-@keyframes firstRotate {
+
+@keyframes up-animation {
   0% {
     transform: translate(0%, 0%) rotateX(-35deg) rotateY(0deg) rotateZ(0deg);
   }
@@ -205,12 +224,12 @@
 }
 
 .move-down-animation {
-  animation: 3s lastRotate forwards;
+  animation: 3s down-animation forwards;
   transition: all 0.3s ease;
 }
 
 
-@keyframes lastRotate {
+@keyframes down-animation {
   0% {
     transform: translate(0%, 0%) rotateX(-140deg) rotateY(0deg) rotateZ(0deg);
   }

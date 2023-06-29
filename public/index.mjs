@@ -1,3 +1,6 @@
+import { eyeTrack } from "./js-modules/eye-track.mjs";
+import { updateCircleDiameter } from "./js-modules/circle-size.mjs";
+
 const bg = document.querySelector(".bg");
 const bgShadow = document.querySelector(".bg-shadow");
 
@@ -13,39 +16,63 @@ const elipse = document.querySelector(".elipse");
 let contactClicked = false;
 let projectsClicked = false;
 
-function eyeTrack(e) {
-  eye.style.transition = "";
-    pupil.style.transition = "";
-
-    elipse.classList.remove("open");
-    var x = e.clientX / 10;
-    var y = e.clientY / 10;
-
-    pupil.classList.add("pupil-grow");
-    elipse.style.height = y + "%";
-
-    eye.style.clipPath = `circle(40% at ${x - 5}% ${y + 10}%)`;
-    pupil.style.clipPath = `circle(17% at ${x - 5}% ${y + 10}%)`;
-}
-
 
 projectsButton.addEventListener("click", () => {
+  projectsClicked = true;
+
   bgShadow.removeEventListener("mousemove", eyeTrack);
+
   firstName.classList.remove("intro-animation");
+  surname.classList.remove("intro-animation");
+
   projectsButton.classList.add("active");
   contact.classList.remove("active");
-  surname.classList.remove("intro-animation");
-  bg.style.animation = "";
-  bgShadow.style.animation = "";
 
   bg.classList.add("move-eye");
   bgShadow.classList.add("move-eye");
-  projects.classList.remove("d-none");
-  projects.classList.add("fade");
 
+  projects.classList.remove("d-none");
+  projects.classList.add("slide-in");
+
+  elipse.style.maxHeight = "100%";
+
+  if (contactClicked === true) {
+    const linkers = Array.from(document.querySelectorAll(".contact-link"));
+
+    const pupilText = document.querySelector(".eye h1");
+    pupilText.innerHTML = "";
+
+    linkers.forEach((link) => {
+      var linkFont = link.style.fontSize;
+      link.style.fontSize = "";
+      link.animate([{ fontSize: linkFont }, { fontSize: "10vw" }], {
+        duration: 1500,
+      });
+    });
+
+    elipse.classList.remove("open");
+    elipse.classList.remove("grow-elipse");
+    elipse.classList.add("shrink-elipse");
+
+    firstName.classList.remove("move-up-animation");
+    surname.classList.remove("move-down-animation");
+
+    firstName.classList.add("down-animation");
+    surname.classList.add("up-animation");
+    setTimeout(() => {
+      document.querySelector(".elipse span").classList.add("eye-wrap");
+    }, 600);
+  }
+
+  contactClicked = false;
 });
 
 contact.addEventListener("click", () => {
+  projectsClicked = false;
+  contactClicked = true;
+
+  elipse.classList.remove("shrink-elipse");
+
   bgShadow.removeEventListener("mousemove", eyeTrack);
 
   firstName.classList.remove("fn-animation");
@@ -54,19 +81,16 @@ contact.addEventListener("click", () => {
   surname.classList.add("move-down-animation");
 
   elipse.classList.remove("open");
-  elipse.classList.add("links-elipse");
+  elipse.classList.add("grow-elipse");
   elipse.style.maxHeight = "100%";
 
-  bg.classList.remove("move-eye-left");
-  bgShadow.classList.remove("move-eye-left");
-
   setTimeout(() => {
-    document.querySelector(".elipse span").classList.toggle("eye-wrap")
+    document.querySelector(".elipse span").classList.remove("eye-wrap");
   }, 600);
 
-  const heading = document.querySelector(".eye h1");
-  heading.innerHTML = "Let's <br> Connect.";
-  heading.animate(
+  const pupilText = document.querySelector(".eye h1");
+  pupilText.innerHTML = "Let's <br> Connect.";
+  pupilText.animate(
     { color: ["initial", "white"] },
     { duration: 300, fill: "both", delay: 500 }
   );
@@ -75,9 +99,12 @@ contact.addEventListener("click", () => {
 
   contact.classList.add("active");
   projectsButton.classList.remove("active");
-  projects.classList.add("d-none");
+  // projects.classList.add("d-none");
 
   linksFontSize();
+
+  if (projectsClicked === true) {
+  }
 });
 
 const firstNameSpans = Array.from(
@@ -130,48 +157,9 @@ const navbar = Array.from(document.querySelectorAll(".navbar h4"));
 
 navbar.forEach((navItem) => {
   navItem.style.fontSize = bg.offsetWidth / 13 + "px";
-})
-
-// function blink() {
-//   firstName.classList.add("blink-top");
-
-//   surname.classList.add("blink-bottom");
-
-//   elipse.classList.add("blink");
-
-//   setTimeout(() => {
-//     firstName.classList.remove("blink-top");
-
-//     surname.classList.remove("blink-bottom");
-
-//     elipse.classList.remove("blink");
-
-//   }, 3000);
-
-// }
+});
 
 window.addEventListener("resize", updateCircleDiameter);
-
-function updateCircleDiameter() {
-  var linksCircle = document.getElementById("links-circle");
-  linksCircle.setAttribute("width", bg.offsetWidth);
-  linksCircle.setAttribute("height", bg.offsetWidth);
-
-  var svg = bgShadow.querySelector("svg");
-  var circlePath = svg.querySelector("#circle-path");
-
-  var parentDivWidth = bgShadow.offsetWidth;
-  var diameter = parentDivWidth - 50;
-
-  var centerX = parentDivWidth / 2;
-  var centerY = parentDivWidth / 2;
-
-  var pathData = `M${centerX} ${centerY} m${-diameter / 2} 0 a${diameter / 2} ${
-    diameter / 2
-  } 0 1 0 ${diameter} 0 a${diameter / 2} ${diameter / 2} 0 1 0 ${-diameter} 0`;
-
-  circlePath.setAttribute("d", pathData);
-}
 
 updateCircleDiameter();
 
@@ -180,46 +168,4 @@ bgShadow.addEventListener("mouseout", function () {
   pupil.style.transition = "clip-path 0.5s ease";
   eye.style.clipPath = `circle(30% at 50% 50%)`;
   pupil.style.clipPath = `circle(15% at 50% 50%)`;
-
-  blink();
 });
-
-// const url = "./resources/grainy.svg";
-
-// let x = 50;
-// let y = -50;
-// let countX = true;
-// let countY = true
-
-// function timerr() {
-//   if (countX) {
-//     ++x;
-
-//     if (x >= 150)
-//       countX = false;
-//   } else {
-//     --x;
-
-//     if (x <= -100)
-//       countX = true;
-//   }
-
-//   if (countY) {
-//     ++y;
-
-//     if (y >= 150)
-//       countY = false;
-
-//   } else {
-//     --y;
-
-//     if (y <= -100)
-//       countY = true;
-//   }
-
-//   const bgString = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${url})`;
-
-//   bg.style.background = bgString;
-// }
-
-// setInterval(timerr, 100);
