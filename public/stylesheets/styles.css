@@ -788,8 +788,6 @@ textPath a:hover {
 :root {
   --serif: "Lora", serif;
   --sans: "Noto Sans", sans-serif;
-  font-family: "Lora", serif;
-  font-family: "Noto Sans", sans-serif;
 }
 
 body {

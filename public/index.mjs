@@ -152,4 +152,6 @@ bgShadow.addEventListener("mouseout", function () {
   pupil.style.transition = "clip-path 0.5s ease";
   eye.style.clipPath = `circle(30% at 50% 50%)`;
   pupil.style.clipPath = `circle(0% at 50% 50%)`;
+  elipse.style.height = "35%";
+
 });
