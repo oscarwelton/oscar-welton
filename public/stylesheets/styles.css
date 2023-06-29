@@ -33,9 +33,19 @@
   .projects {
     width: 100%;
     height: 50%;
+    top: 100%;
   }
   .move-eye {
-    animation: top 3s forwards;
+    animation: top 2s ease-in-out forwards;
+  }
+  .move-eye-back {
+    animation: center-from-top 2s ease-in-out forwards;
+  }
+  .slide-in {
+    animation: slide-in-half 2s ease-in forwards;
+  }
+  .slide-out {
+    animation: slide-out-half 2s linear forwards;
   }
 }
 /* Large devices (laptops/desktops, 992px and up) */
@@ -51,11 +61,21 @@
   .projects {
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 50%;
     height: 100%;
+    top: 100%;
+  }
+  .slide-in {
+    animation: slide-in-full 1s ease-in forwards;
+  }
+  .slide-out {
+    animation: slide-out-full 1s linear forwards;
   }
   .move-eye {
-    animation: left 3s forwards;
+    animation: left 2s ease-in-out forwards;
+  }
+  .move-eye-back {
+    animation: center-from-left 2s ease-in-out forwards;
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -79,12 +99,28 @@
     width: 40vw;
   }
 }
+@keyframes center-from-left {
+  0% {
+    left: 75%;
+  }
+  100% {
+    left: 50%;
+  }
+}
 @keyframes left {
   0% {
     left: 50%;
   }
   100% {
     left: 75%;
+  }
+}
+@keyframes center-from-top {
+  0% {
+    top: 30%;
+  }
+  100% {
+    top: 50%;
   }
 }
 @keyframes top {
@@ -310,7 +346,7 @@ textPath a:hover {
   transition: all 0.3s ease;
 }
 .first-name span {
-  font-size: 20rem;
+  font-size: 30rem;
   backface-visibility: hidden;
   font-family: var(--serif);
   font-weight: 100;
@@ -601,14 +637,14 @@ textPath a:hover {
   }
 }
 .pupil-grow {
-  animation: 0.5s pupil ease-in forwards;
+  animation: 0.5s pupil-grow linear forwards;
 }
 
 .pupil-shrink {
-  animation: 0.5s pupil ease-in backwards;
+  animation: 0.5s pupil-shrink linear forwards;
 }
 
-@keyframes pupil {
+@keyframes pupil-grow {
   0% {
     height: 0%;
     width: 0%;
@@ -618,8 +654,24 @@ textPath a:hover {
     width: 100%;
   }
 }
+@keyframes pupil-shrink {
+  0% {
+    height: 100%;
+    width: 100%;
+  }
+  100% {
+    height: 0%;
+    width: 0%;
+  }
+}
 .eye-wrap {
   filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+
+.pupil-wrap {
+  height: 100%;
+  width: 100%;
+  filter: drop-shadow(0px 0px 10px rgb(217, 57, 57));
 }
 
 .projects {
@@ -629,6 +681,7 @@ textPath a:hover {
   box-sizing: border-box;
   scrollbar-width: none;
   margin-top: 5rem;
+  transition-property: all;
 }
 .projects::-webkit-scrollbar {
   display: none;
@@ -686,6 +739,45 @@ textPath a:hover {
   width: fit-content;
 }
 
+@keyframes slide-in-full {
+  0% {
+    top: 50%;
+    opacity: 0;
+  }
+  100% {
+    top: 0%;
+    opacity: 1;
+  }
+}
+@keyframes slide-out-full {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+@keyframes slide-in-half {
+  0% {
+    top: 100%;
+    opacity: 0;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+@keyframes slide-out-half {
+  0% {
+    top: 50%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
 :root {
   --serif: "Lora", serif;
   --sans: "Noto Sans", sans-serif;

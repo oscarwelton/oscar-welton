@@ -120,14 +120,14 @@
 }
 
 .pupil-grow {
-  animation: 0.5s pupil ease-in forwards;
+  animation: 0.5s pupil-grow linear forwards;
 }
 
 .pupil-shrink {
-  animation: 0.5s pupil ease-in backwards;
+  animation: 0.5s pupil-shrink linear forwards;
 }
 
-@keyframes pupil {
+@keyframes pupil-grow {
   0% {
     height: 0%;
     width: 0%;
@@ -139,9 +139,26 @@
   }
 }
 
+@keyframes pupil-shrink {
+  0% {
+    height: 100%;
+    width: 100%;
+  }
+
+  100% {
+    height: 0%;
+    width: 0%;
+  }
+}
 
 .eye-wrap {
   filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+
+.pupil-wrap {
+  height: 100%;
+  width: 100%;
+  filter: drop-shadow(0px 0px 10px rgb(217, 57, 57));
 }
 
 

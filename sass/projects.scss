@@ -5,6 +5,7 @@
   box-sizing: border-box;
   scrollbar-width: none;
   margin-top: 5rem;
+  transition-property: all;
 
   &::-webkit-scrollbar {
     display: none;
@@ -71,19 +72,49 @@
   width: fit-content;
 }
 
-// .slide-in {
-//   animation: slide-in 1s ease-in forwards;
-//   animation-delay: 1s;
-// }
+@keyframes slide-in-full {
+  0% {
+    top: 50%;
+    opacity: 0;
+  }
 
-// @keyframes slide-in {
-//   0% {
-//     top: 100%;
-//     opacity: 0;
-//   }
+  100% {
+    top: 0%;
+    opacity: 1;
+  }
+}
 
-//   100% {
-//     top: 0%;
-//     opacity: 1;
-//   }
-// }
+@keyframes slide-out-full {
+  0% {
+    top: 0%;
+  }
+
+  100% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-half {
+  0% {
+    top: 100%;
+    opacity: 0;
+  }
+
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-half {
+  0% {
+    top: 50%;
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}

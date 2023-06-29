@@ -42,13 +42,24 @@
   .projects {
     width: 100%;
     height: 50%;
+    top: 100%;
   }
 
   .move-eye {
-    animation: top 3s forwards;
+    animation: top 2s ease-in-out forwards;
   }
 
+  .move-eye-back {
+    animation: center-from-top 2s ease-in-out forwards;
+  }
 
+  .slide-in {
+    animation: slide-in-half 2s ease-in forwards;
+  }
+
+  .slide-out {
+    animation: slide-out-half 2s linear forwards;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -66,12 +77,25 @@
   .projects {
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 50%;
     height: 100%;
+    top: 100%;
+  }
+
+  .slide-in {
+    animation: slide-in-full 1s ease-in forwards;
+  }
+
+  .slide-out {
+    animation: slide-out-full 1s linear forwards;
   }
 
   .move-eye {
-    animation: left 3s forwards;
+    animation: left 2s ease-in-out forwards;
+  }
+
+  .move-eye-back {
+    animation: center-from-left 2s ease-in-out forwards;
   }
 }
 
@@ -79,7 +103,7 @@
 @media only screen and (min-width: 1200px) {
   .bg {
     height: 50vw;
-    width:50vw;
+    width: 50vw;
   }
 
   .bg-shadow {
@@ -100,8 +124,15 @@
   }
 }
 
+@keyframes center-from-left {
+  0% {
+    left: 75%;
+  }
 
-
+  100% {
+    left: 50%;
+  }
+}
 
 @keyframes left {
   0% {
@@ -113,10 +144,22 @@
   }
 }
 
+@keyframes center-from-top {
+  0% {
+    top: 30%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+
 @keyframes top {
   0% {
     top: 50%;
   }
+
   100% {
     top: 30%;
   }
