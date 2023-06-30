@@ -27,7 +27,7 @@ function linksFontSize() {
     contact.style.pointerEvents = "auto";
   });
 
-  const connect = document.querySelector(".eye h1");
+  const connect = document.querySelector(".eye h4");
   connect.style.fontSize = linkFontSize;
   connect.style.transition = "font-size 3s";
 }
