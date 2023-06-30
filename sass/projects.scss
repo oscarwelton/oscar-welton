@@ -4,6 +4,8 @@
   overflow: scroll;
   box-sizing: border-box;
   scrollbar-width: none;
+  scroll-padding-top: 1rem;
+  scroll-snap-type: y mandatory;
   margin-top: 5rem;
   transition-property: all;
   transition: filter 0.3s ease;
@@ -13,6 +15,7 @@
   }
 
   .project {
+    scroll-snap-align: start;
     margin-bottom: 3rem;
     padding: 2rem;
     border-radius: 3px;
@@ -45,6 +48,7 @@
     font-weight: 500;
     font-family: var(--sans);
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 

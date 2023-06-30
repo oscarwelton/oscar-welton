@@ -36,12 +36,10 @@ projectsButton.addEventListener("click", () => {
   bgShadow.classList.add("move-eye");
 
   // function addSlideInClass() {
-    projects.classList.add("slide-in");
-
+  projects.classList.add("slide-in");
 
   // bg.addEventListener("animationend", addSlideInClass);
   // bgShadow.addEventListener("animationend", addSlideInClass);
-
 
   projects.classList.remove("slide-out");
 
@@ -51,7 +49,7 @@ projectsButton.addEventListener("click", () => {
 
     const linkers = Array.from(document.querySelectorAll(".contact-link"));
 
-    const pupilText = document.querySelector(".eye h1");
+    const pupilText = document.querySelector(".eye h4");
     pupilText.innerHTML = "";
 
     linkers.forEach((link) => {
@@ -105,7 +103,7 @@ contact.addEventListener("click", () => {
     document.querySelector(".elipse span").classList.remove("eye-wrap");
   }, 600);
 
-  const pupilText = document.querySelector(".eye h1");
+  const pupilText = document.querySelector(".eye h4");
   pupilText.innerHTML = "Let's <br> Connect.";
   pupilText.animate(
     { color: ["initial", "white"] },
@@ -139,7 +137,7 @@ setTimeout(() => {
 }, 2000);
 
 const linkFontSize = bg.offsetWidth / 10 + "px";
-document.querySelector(".eye h1").style.fontSize = linkFontSize;
+document.querySelector(".eye h4").style.fontSize = linkFontSize;
 
 const navbar = Array.from(document.querySelectorAll(".navbar h4"));
 navbar.forEach((navItem) => {
@@ -152,6 +150,4 @@ bgShadow.addEventListener("mouseout", function () {
   pupil.style.transition = "clip-path 0.5s ease";
   eye.style.clipPath = `circle(30% at 50% 50%)`;
   pupil.style.clipPath = `circle(0% at 50% 50%)`;
-  elipse.style.height = "35%";
-
 });
