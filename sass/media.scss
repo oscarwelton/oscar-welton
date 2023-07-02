@@ -128,41 +128,42 @@
 
 @keyframes center-from-left {
   0% {
-    left: 75%;
+    transform: translate(0%, -50%);
   }
 
   100% {
-    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
 @keyframes left {
   0% {
-    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   100% {
-    left: 75%;
+    transform: translate(0%, -50%);
   }
 }
 
+
 @keyframes center-from-top {
   0% {
-    top: 30%;
+    transform: translate(-50%, -100%);
   }
 
   100% {
-    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
 
 @keyframes top {
   0% {
-    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   100% {
-    top: 30%;
+    transform: translate(-50%, -100%);
   }
 }
