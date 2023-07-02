@@ -767,14 +767,14 @@ textPath a:hover {
     opacity: 0;
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(-95%);
     opacity: 1;
   }
 }
 @keyframes slide-out-full {
   0% {
     opacity: 1;
-    transform: translateY(-100%);
+    transform: translateY(-95%);
   }
   100% {
     transform: translateY(-50%);
