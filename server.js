@@ -4,6 +4,9 @@ import  compression  from "compression"
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -25,7 +28,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+  console.log(`App listening on port ${PORT}`);
 });
 
 app.get("/sitemap.xml", (req, res) => {

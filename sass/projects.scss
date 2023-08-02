@@ -1,11 +1,10 @@
 .projects {
   position: absolute;
-  padding: 2rem;
+  padding: 2rem 1rem 5rem 1rem;
   overflow: scroll;
   box-sizing: border-box;
   scrollbar-width: none;
   scroll-padding-top: 1rem;
-  scroll-snap-type: y mandatory;
   margin-top: 5rem;
   transition-property: all;
   transition: filter 0.3s ease;
@@ -16,35 +15,35 @@
 
   .project {
     scroll-snap-align: start;
-    margin-bottom: 3rem;
-    padding: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
     border-radius: 3px;
     }
 
   .project-header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0.5rem;
     align-items: baseline;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   }
 
   .title {
     font-size: 3.5rem;
-    margin-bottom: 2rem;
     letter-spacing: 5px;
     font-weight: 100;
     font-family: var(--serif);
   }
 
   .date {
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
+    font-size: 2rem;
     font-family: var(--serif);
-    font-weight: 300;
+    font-weight: 100;
   }
 
   .technologies {
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+    padding: 0.5rem 0rem;
+    font-size: 1.25rem;
     font-weight: 500;
     font-family: var(--sans);
     display: flex;
@@ -53,21 +52,23 @@
   }
 
   p {
-    font-size: 2em;
-    margin: 2rem 0;
+    font-size: 1.25rem;
+    padding: 1rem 0rem 0rem 0rem;
+    font-family: var(--sans);
     text-align: justify;
     font-weight: 100;
   }
 
   .project-links {
+    padding-top: 1rem;
     display: flex;
     justify-content: space-between;
   }
 
   a {
-    font-family: var(--sans-serif);
+    font-family: var(--sans);
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 1.75rem;
     font-weight: 100;
     color: black;
   }
@@ -75,6 +76,7 @@
 
 .single-link {
   width: fit-content;
+  padding-top: 1rem;
 }
 
 @keyframes slide-in-full {
