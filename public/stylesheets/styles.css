@@ -707,7 +707,7 @@ textPath a:hover {
 }
 .projects .project {
   scroll-snap-align: start;
-  margin-bottom: 2rem;
+  margin: 2rem 0rem;
   padding: 1.5rem;
   border-radius: 3px;
 }
@@ -746,9 +746,9 @@ textPath a:hover {
   font-weight: 100;
 }
 .projects .project-links {
-  padding-top: 1rem;
   display: flex;
   justify-content: space-between;
+  padding-top: 1rem;
 }
 .projects a {
   font-family: var(--sans);
@@ -760,7 +760,7 @@ textPath a:hover {
 
 .single-link {
   width: fit-content;
-  padding-top: 1rem;
+  margin-top: 1rem;
 }
 
 @keyframes slide-in-full {

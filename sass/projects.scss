@@ -15,10 +15,10 @@
 
   .project {
     scroll-snap-align: start;
-    margin-bottom: 2rem;
+    margin: 2rem 0rem;
     padding: 1.5rem;
     border-radius: 3px;
-    }
+  }
 
   .project-header {
     display: flex;
@@ -60,9 +60,9 @@
   }
 
   .project-links {
-    padding-top: 1rem;
     display: flex;
     justify-content: space-between;
+    padding-top: 1rem;
   }
 
   a {
@@ -76,7 +76,8 @@
 
 .single-link {
   width: fit-content;
-  padding-top: 1rem;
+  margin-top: 1rem;
+
 }
 
 @keyframes slide-in-full {
